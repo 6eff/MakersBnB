@@ -2,6 +2,7 @@
 
 ## Team Members
 * Karol Lebiedzinski
+* Nomi Vos
 
 ### User Stories
 
