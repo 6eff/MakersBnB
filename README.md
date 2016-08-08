@@ -3,6 +3,7 @@
 ## Team Members
 * Karol Lebiedzinski
 * Nomi Vos
+* Luke Cartledge
 
 ### User Stories
 
