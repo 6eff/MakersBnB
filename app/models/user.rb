@@ -14,7 +14,7 @@ class User
   attr_accessor :confirm_password
   attr_reader :password
 
-  validates_confirmation_of :password
+  #validates_confirmation_of :password
 
   def password=(password)
     @password = password
