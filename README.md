@@ -51,10 +51,6 @@ So that I can decide who is staying
 I want to be able to approve a hire request
 
 As an owner
-So that I don't get asked about taken nights
-I want confirmed nights to be shown as unavailable
-
-As an owner
 So that I have flexibility with bookings
 I want a space to be available until a booking is confirmed
 ```
@@ -68,6 +64,10 @@ I want to specify a range of dates
 As a potential guest
 So that I can decide where to stay
 I want to see a list of available spaces for a particular date range
+
+As an guest
+So that I won't waste too much time
+I want booked nights to be shown as unavailable
 
 As a potential guest
 So that I can arrange a booking
