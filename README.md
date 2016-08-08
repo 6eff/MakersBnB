@@ -1,6 +1,6 @@
-MakersBnB
+# MakersBnB
 
-## User Stories
+### User Stories
 
 ```
 As a new user
