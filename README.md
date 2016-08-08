@@ -1,5 +1,8 @@
 # MakersBnB
 
+## Team Members
+* Karol Lebiedzinski
+
 ### User Stories
 
 ```
