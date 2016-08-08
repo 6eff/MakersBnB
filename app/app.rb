@@ -4,18 +4,30 @@ require 'sinatra/partial'
 
 ENV['RACK_ENV'] ||= 'development'
 require_relative 'data_mapper_setup'
+require_relative 'models/user'
 
 class MakersBnB < Sinatra::Base
+  enable :sessions
+  register Sinatra::Flash
+
+  def current_user
+    @current_user ||= User.get(session[:user_id])
+  end
+
+  get '/' do
+    erb :index
+  end
 
   get '/users/new' do
     erb :"/users/new"
   end
 
   post '/users' do
-    @user = User.new(name: params[:name],
-                      email: params[:email],
-                      password: params[:password],
-                      confirm_password: params[:confirm_password])
+    @user = User.new(name:             params[:name],
+                     email:            params[:email],
+                     password:         params[:password],
+                     confirm_password: params[:confirm_password]
+                     )
     if @user.save
       session[:user_id] = @user.id
       redirect '/'

@@ -1,0 +1,12 @@
+<html>
+<head>
+
+</head>
+<body>
+  <% if current_user %>
+   <h4>Welcome <%= current_user.name %>!</h4>
+  <% end %>
+
+  <%= yield %>
+</body>
+</html>

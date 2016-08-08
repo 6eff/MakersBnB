@@ -7,6 +7,8 @@ require 'rspec'
 require 'database_cleaner'
 require 'coveralls'
 
+require './app/models/user'
+
 # SimpleCov.formatters = [
 #   SimpleCov::Formatter::HTMLFormatter,
 #   Coveralls::SimpleCov::Formatter
