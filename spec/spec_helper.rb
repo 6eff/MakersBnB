@@ -7,10 +7,10 @@ require 'rspec'
 require 'database_cleaner'
 require 'coveralls'
 
-SimpleCov.formatters = [
-  SimpleCov::Formatter::HTMLFormatter,
-  Coveralls::SimpleCov::Formatter
-]
+# SimpleCov.formatters = [
+#   SimpleCov::Formatter::HTMLFormatter,
+#   Coveralls::SimpleCov::Formatter
+# ]
 Coveralls.wear!
 
 Capybara.app = MakersBnB
