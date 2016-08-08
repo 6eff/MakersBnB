@@ -65,7 +65,7 @@ As a potential guest
 So that I can decide where to stay
 I want to see a list of available spaces for a particular date range
 
-As an guest
+As a potential guest
 So that I won't waste too much time
 I want booked nights to be shown as unavailable
 

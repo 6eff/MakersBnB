@@ -8,7 +8,6 @@
 |   knows email  	    |       	|
 |   lists spaces      |  spaces	|
 
-
 | Space 	                |        	  |
 |:----:	                  |---    	  |
 |   knows name of space   |       	  |
