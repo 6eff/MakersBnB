@@ -50,6 +50,7 @@ class MakersBnB < Sinatra::Base
       flash.now[:notice] = "Invalid password or email!"
       erb :'users/login'
     end
+  end
 
   get '/spaces/new' do
     erb :"/spaces/new"
