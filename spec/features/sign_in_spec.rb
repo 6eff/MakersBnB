@@ -11,9 +11,9 @@ feature "Sign in" do
     expect(page).to have_content("Welcome Bob!")
   end
   scenario "user can't sign in with invalid email" do
-    fill_in "email", with: "bobby09@mail.com"
-    fill_in "password", with: "qwerty"
-    click_button "Sign in"
+      fill_in "email", with: "bobby09@mail.com"
+      fill_in "password", with: "qwerty"
+      click_button "Sign in"
     expect(page).to have_content "Invalid password or email!"
   end
   scenario "user can't sign in with invalid password" do
