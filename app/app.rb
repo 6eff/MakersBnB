@@ -43,12 +43,14 @@ class MakersBnB < Sinatra::Base
 
   post '/spaces' do
     @space = Space.create(name:    params[:name],
-                          address: params[:address]
+                          address: params[:address],
+                          description: params[:description]
                           )
     redirect to '/spaces'
   end
 
   get '/spaces' do
+    @spaces = Space.all
     erb :'/spaces/index'
   end
 

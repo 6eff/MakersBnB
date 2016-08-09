@@ -5,5 +5,5 @@ class Space
   property :id, Serial
   property :name, String, required: true
   property :address, String, required: true
-
+  property :description, String
 end
