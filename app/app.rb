@@ -3,8 +3,8 @@ require 'sinatra/flash'
 require 'sinatra/partial'
 
 ENV['RACK_ENV'] ||= 'development'
+
 require_relative 'data_mapper_setup'
-require_relative 'models/user'
 
 class MakersBnB < Sinatra::Base
   enable :sessions
@@ -39,6 +39,17 @@ class MakersBnB < Sinatra::Base
 
   get '/spaces/new' do
     erb :"/spaces/new"
+  end
+
+  post '/spaces' do
+    @space = Space.create(name:    params[:name],
+                          address: params[:address]
+                          )
+    redirect to '/spaces'
+  end
+
+  get '/spaces' do
+    erb :'/spaces/index'
   end
 
   # start the server if ruby file executed directly
