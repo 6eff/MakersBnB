@@ -3,8 +3,8 @@ require 'sinatra/flash'
 require 'sinatra/partial'
 
 ENV['RACK_ENV'] ||= 'development'
+
 require_relative 'data_mapper_setup'
-require_relative 'models/user'
 
 class MakersBnB < Sinatra::Base
   enable :sessions
@@ -50,6 +50,22 @@ class MakersBnB < Sinatra::Base
       flash.now[:notice] = "Invalid password or email!"
       erb :'users/login'
     end
+
+  get '/spaces/new' do
+    erb :"/spaces/new"
+  end
+
+  post '/spaces' do
+    @space = Space.create(name:    params[:name],
+                          address: params[:address],
+                          description: params[:description]
+                          )
+    redirect to '/spaces'
+  end
+
+  get '/spaces' do
+    @spaces = Space.all
+    erb :'/spaces/index'
   end
 
   # start the server if ruby file executed directly
