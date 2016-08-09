@@ -18,11 +18,11 @@ class MakersBnB < Sinatra::Base
     erb :index
   end
 
-  get '/users/new' do
-    erb :"/users/new"
+  get '/users/signup' do
+    erb :'/users/new'
   end
 
-  post '/users' do
+  post '/users/create' do
     @user = User.create(name:                  params[:name],
                         email:                 params[:email],
                         password:              params[:password],
@@ -36,6 +36,20 @@ class MakersBnB < Sinatra::Base
       erb :'/users/new'
     end
   end
+
+  get '/users/signin' do
+    erb :'users/login'
+  end
+
+  post '/users/login' do
+    user = User.authenticate(params[:email], params[:password])
+    if user
+      session[:user_id] = user.id
+      redirect to '/'
+    else
+      flash.now[:notice] = "Invalid password or email!"
+      erb :'users/login'
+    end
 
   get '/spaces/new' do
     erb :"/spaces/new"

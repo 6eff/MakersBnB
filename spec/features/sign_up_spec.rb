@@ -1,6 +1,6 @@
 feature "Sign up" do
   scenario "user can sign up to a new account" do
-    visit "/users/new"
+    visit "/users/signup"
     fill_in "name", with: "Bob"
     fill_in "email", with: "bobby90@mail.com"
     fill_in "password", with: "qwerty"
