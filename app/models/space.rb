@@ -5,5 +5,7 @@ class Space
   property :id, Serial
   property :name, String, required: true
   property :address, String, required: true
-  property :description, String
+  property :description, Text
+  property :price, Decimal, precision: 8, scale: 4
+
 end
