@@ -8,7 +8,7 @@ require 'database_cleaner'
 require 'coveralls'
 
 require './app/models/user'
-
+require_relative 'features/web_helpers.rb'
 # SimpleCov.formatters = [
 #   SimpleCov::Formatter::HTMLFormatter,
 #   Coveralls::SimpleCov::Formatter
