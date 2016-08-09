@@ -42,10 +42,11 @@ class MakersBnB < Sinatra::Base
   end
 
   post '/spaces' do
+    price = BigDecimal.new(params[:price])
     @space = Space.create(name:        params[:name],
                           address:     params[:address],
                           description: params[:description],
-                          price:       params[:price]
+                          price:       price
                           )
     redirect to '/spaces'
   end

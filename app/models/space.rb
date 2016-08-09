@@ -6,6 +6,6 @@ class Space
   property :name, String, required: true
   property :address, String, required: true
   property :description, Text
-  property :price, Decimal, precision: 8, scale: 4
+  property :price, Decimal, precision: 15, scale: 4
 
 end
