@@ -5,9 +5,7 @@ feature "Sign in" do
     visit "/users/signin"
   end
   scenario "user can sign in to his account" do
-    fill_in "email", with: "bobby90@mail.com"
-    fill_in "password", with: "qwerty"
-    expect{ click_button "Sign in" }.not_to change(User, :count)
+    expect{ sign_in }.not_to change(User, :count)
     expect(page).to have_content("Welcome Bob!")
   end
   scenario "user can't sign in with invalid email" do
