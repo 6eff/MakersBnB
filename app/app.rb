@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/flash'
 require 'sinatra/partial'
+require 'byebug'
 
 ENV['RACK_ENV'] ||= 'development'
 
@@ -65,11 +66,15 @@ class MakersBnB < Sinatra::Base
 
   post '/spaces' do
     price = BigDecimal.new(params[:price])
-    @space = Space.create(name:        params[:name],
+    space = Space.create(name:        params[:name],
                           address:     params[:address],
                           description: params[:description],
                           price:       price
                           )
+    user = User.get(session[:user_id])
+    user.spaces << space
+    space.save
+    user.save
     redirect to '/spaces'
   end
 

@@ -17,4 +17,5 @@ group :test, :development do
   gem 'database_cleaner'
   gem 'rspec-sinatra'
   gem 'rerun'
+  gem 'byebug'
 end
