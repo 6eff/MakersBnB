@@ -1,7 +1,13 @@
 feature 'Create New Space' do
 
-  scenario 'adding a new space listing' do
+  scenario "only as a existing user" do
     visit '/spaces/new'
+    expect(page).to have_link "Please sign up or sign in"
+  end
+
+  scenario 'as signed-in user' do
+    sign_up
+    click_link 'Add new space'
     fill_in 'Name of Space:', with: 'The White House'
     fill_in 'Address:', with: '1600 Pennsylvania Avenue'
     fill_in 'Description:', with: 'A BIG WHITE house'
