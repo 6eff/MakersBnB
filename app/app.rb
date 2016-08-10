@@ -78,6 +78,11 @@ class MakersBnB < Sinatra::Base
     erb :'/spaces/index'
   end
 
+  get '/spaces/:id' do
+    @details = Space.get(params[:id])
+    erb :'/spaces/details'
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

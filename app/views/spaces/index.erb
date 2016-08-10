@@ -1,7 +1,7 @@
 <ul id='spaces'>
   <% @spaces.each do |space| %>
     <li>
-      Name: <%= space.name %>
+      Name: <a href="/spaces/<%= space.id %>"><%= space.name %></a>
       Description: <%= space.description %>
       Price: £<%= (space.price.truncate(2).to_s('F') + '00')[/.*\..{2}/] %> per night
     </li>
