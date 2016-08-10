@@ -1,0 +1,17 @@
+<h1><%= @details.name %></h1>
+
+<p><%= @details.description %></p>
+
+<h4>£<%= (@details.price.truncate(2).to_s('F') + '00')[/.*\..{2}/] %> per night</h4>
+
+<p>
+  Pick a night
+</p>
+
+<form action="/booking" action="post">
+  <label for="booking-date">
+    Booking Date
+  <input type="date" name="booking-date"/>
+  </label>
+  <button type="submit" name="request">Request Booking</button>
+</form>
