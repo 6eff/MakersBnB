@@ -1,19 +1,23 @@
-<form action="/spaces" method="post">
-  <label for="name">
-    Name of Space:
-    <input type="text" name="name"/>
-  </label>
-  <label for="address">
-    Address:
-    <input type="text" name="address"/>
-  </label>
-  <label for="description">
-    Description:
-    <input type="text" name="description"/>
-  </label>
-  <label for="price">
-    Price:
-    <input type="text" name="price"/>
-  </label>
-  <button type="submit">Add Space</button>
-</form>
+<% if current_user %>
+  <form action="/spaces" method="post">
+  	<label for="name">
+  		Name of Space:
+  		<input type="text" name="name"/>
+  	</label>
+  	<label for="address">
+  		Address:
+  		<input type="text" name="address"/>
+  	</label>
+  	<label for="description">
+  		Description:
+  		<input type="text" name="description"/>
+  	</label>
+  	<label for="price">
+  		Price:
+  		<input type="text" name="price"/>
+  	</label>
+  	<button type="submit">Add Space</button>
+  </form>
+<% else %>
+  <a type="button" href="/">Please sign up or sign in</a>
+<% end %>
