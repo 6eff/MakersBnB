@@ -9,6 +9,8 @@ class User
   attr_reader :password
   attr_accessor :password_confirmation
 
+  has n, :spaces, through: Resource
+  
   property :id, Serial
   property :name, String, required: true
   property :email, String, required: true, unique: true, format: :email_address
