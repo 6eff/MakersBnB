@@ -83,6 +83,10 @@ class MakersBnB < Sinatra::Base
     erb :'/spaces/details'
   end
 
+  post '/booking' do
+    
+  end
+
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

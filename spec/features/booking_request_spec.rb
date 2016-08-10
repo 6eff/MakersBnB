@@ -14,6 +14,7 @@ feature 'New Booking Request' do
     click_link 'The White House'
     expect(page.status_code).to eq 200
     expect(page).to have_content 'A BIG WHITE house'
+    fill_in 'Booking Date', with: '04/07/2017'
     click_button 'Request Booking'
   end
 
