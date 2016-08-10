@@ -6,6 +6,7 @@
 * Karol Lebiedzinski
 * Nomi Vos
 * Luke Cartledge
+* Victor Vasiliev
 
 ### User Stories
 
