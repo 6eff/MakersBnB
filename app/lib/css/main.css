@@ -1,4 +1,6 @@
-input[type=button], input[type=submit], .button {
+@import url('normalize.css');
+
+.button_styled {
     background-color: #4CAF50;
     border: none;
     color: white;
