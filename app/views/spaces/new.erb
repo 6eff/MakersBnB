@@ -4,31 +4,31 @@
   </div>
   <div class="col-6">
     <% if current_user %>
-      <form action="/spaces" method="post">
+      <form action="/spaces" method="post" class="form_group">
       	<label for="name">
       		Name of Space:
-      		<input type="text" name="name"/>
-      	</label>
+        </label>
+    		<input type="text" name="name"/>
       	<label for="address">
       		Address:
-      		<input type="text" name="address"/>
-      	</label>
+        </label>
+    		<input type="text" name="address"/>
       	<label for="description">
       		Description:
-      		<textarea name="description" rows="10" cols="30"></textarea>
-      	</label>
-      	<label for="price">
+        </label>
+    		<textarea name="description" rows="10" cols="30"></textarea>
+      	<label for="price" padding-top="10px">
       		Price:
-      		<input type="text" name="price"/>
-      	</label>
+        </label>
+    		<input type="text" name="price"/>
       	<label for="available_from">
       		Available from:
-      		<input type="date" name="available_from"/>
-      	</label>
+        </label>
+    		<input type="date" name="available_from"/>
       	<label for="available_to">
       		Available to:
-      		<input type="date" name="available_to"/>
-      	</label>
+        </label>
+    		<input type="date" name="available_to"/>
       	<button type="submit" class="button_styled" >Add Space</button>
       </form>
     <% else %>
