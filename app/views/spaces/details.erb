@@ -1,5 +1,7 @@
 <h1><%= @details.name %></h1>
 
+<h2><%= @owner.name %></h2>
+
 <p><%= @details.description %></p>
 
 <h4>£<%= (@details.price.truncate(2).to_s('F') + '00')[/.*\..{2}/] %> per night</h4>
