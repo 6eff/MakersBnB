@@ -8,9 +8,10 @@ ENV['RACK_ENV'] ||= 'development'
 require_relative 'data_mapper_setup'
 
 class MakersBnB < Sinatra::Base
-  use Rack::MethodOverride
   enable :sessions
   register Sinatra::Flash
+  use Rack::MethodOverride
+  set :public_folder, Proc.new { File.join(root, 'lib') }
 
   def current_user
     @current_user ||= User.get(session[:user_id])
