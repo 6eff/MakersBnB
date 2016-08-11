@@ -1,23 +1,28 @@
-<div class="col-3">
-  <% if current_user %>
-  <form action="/spaces/new" method="get">
-    <button type="submit" class="button_styled" >Add new space</button>
-  </form>
-  <% end %>
-</div>
-<div class="col-6">
-  <ul id='spaces'>
-    <% @spaces.each do |space| %>
-    <a href="/spaces/<%= space.id %>">
-      <li>
-        <span class="space_name"><%= space.name %></span>
-        <br />
-        <span class="space_desc"><%= space.description %></span>
-        <br />
-        £<%= (space.price.truncate(2).to_s('F') + '00')[/.*\..{2}/] %> per night
-      </li>
-    </a>
+<div class="grid">
+  <div class="col-3">
+    <br />
+  </div>
+  <div class="col-6">
+    <ul id='spaces'>
+      <% @spaces.each do |space| %>
+      <a href="/spaces/<%= space.id %>">
+        <li>
+          <span class="space_name"><%= space.name %></span>
+          <br />
+          <span class="space_desc"><%= space.description %></span>
+          <br />
+          £<%= (space.price.truncate(2).to_s('F') + '00')[/.*\..{2}/] %> per night
+        </li>
+      </a>
+      <% end %>
+    </ul>
+    <% if current_user %>
+    <form action="/spaces/new" method="get">
+      <button type="submit" class="button_styled" >Add new space</button>
+    </form>
     <% end %>
-  </ul>
+  </div>
+  <div class="col-3">
+    <br />
+  </div>
 </div>
-<div class="col-3"></div>
