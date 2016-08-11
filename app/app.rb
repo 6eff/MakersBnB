@@ -11,7 +11,7 @@ class MakersBnB < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
   use Rack::MethodOverride
-  set :public_folder, Proc.new { File.join(root, 'lib') }
+  set :public_folder, Proc.new { File.join(root, 'app') }
 
   def current_user
     @current_user ||= User.get(session[:user_id])
@@ -67,11 +67,13 @@ class MakersBnB < Sinatra::Base
 
   post '/spaces' do
     price = BigDecimal.new(params[:price])
-    space = Space.create(name:        params[:name],
-                          address:     params[:address],
-                          description: params[:description],
-                          price:       price
-                          )
+    space = Space.create(name:            params[:name],
+                         address:         params[:address],
+                         description:     params[:description],
+                         price:           price,
+                         available_from:  params[:available_from],
+                         available_to:    params[:available_to]
+                         )
     user = User.get(session[:user_id])
     user.spaces << space
     space.save
@@ -86,7 +88,7 @@ class MakersBnB < Sinatra::Base
 
   get '/spaces/:id' do
     @details = Space.get(params[:id])
-    @owner = @details.user
+    # @owner = @details.user
     erb :'/spaces/details'
   end
 

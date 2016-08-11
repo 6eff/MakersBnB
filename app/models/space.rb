@@ -13,6 +13,8 @@ class Space
   property :address, String, required: true
   property :description, Text
   property :price, Decimal, precision: 15, scale: 4
+  property :available_from, Date, required: true
+  property :available_to, Date, required: true
   #property :price_for_night, Decimal, precision: 15, scale: 4
 
 end
