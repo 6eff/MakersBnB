@@ -1,16 +1,7 @@
 @import url('normalize.css');
 @import url('grid.css');
 
-.button_styled {
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 3px;
-    color: white;
-    padding: 5px 10px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-}
+/*  LISTS   */
 
 a {
   text-decoration: none;
@@ -40,4 +31,21 @@ ul li {
 
 ul#spaces li:hover {
   background-color: #ffff66;
+}
+
+/*  FORMS   */
+
+input {
+    width: 100%;
+}
+
+.button_styled {
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  padding: 5px 10px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
 }

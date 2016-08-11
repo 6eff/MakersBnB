@@ -19,13 +19,15 @@
 
 </head>
 <body>
+<div class="col-12">
   <% if current_user %>
-   <h4>Welcome <%= current_user.name %>!</h4>
-     <form method='post' action='/'>
-       <input type='hidden' name='_method' value='delete'>
-       <input type='submit' class="button_styled" value='Sign out'>
-     </form>
+  <h4>Welcome <%= current_user.name %>!</h4>
+  <form method='post' action='/'>
+    <input type='hidden' name='_method' value='delete'>
+    <input type='submit' class="button_styled" value='Sign out'>
+  </form>
   <% end %>
+</div>
 
   <%= yield %>
 
