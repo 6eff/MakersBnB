@@ -11,7 +11,7 @@ class MakersBnB < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
   use Rack::MethodOverride
-  set :public_folder, Proc.new { File.join(root, 'app') }
+  set :public_folder, Proc.new { File.join(File.dirname(__FILE__),'lib') }
 
   def current_user
     @current_user ||= User.get(session[:user_id])
