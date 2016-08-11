@@ -85,11 +85,12 @@ class MakersBnB < Sinatra::Base
 
   get '/spaces/:id' do
     @details = Space.get(params[:id])
+    @owner = @details.user
     erb :'/spaces/details'
   end
 
   post '/booking' do
-    
+
   end
 
   # start the server if ruby file executed directly
