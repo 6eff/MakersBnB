@@ -86,12 +86,19 @@ class MakersBnB < Sinatra::Base
 
   get '/spaces/:id' do
     @details = Space.get(params[:id])
-    @owner = @details.user
+    @owner = @details.users
     erb :'/spaces/details'
   end
 
-  post '/booking' do
+  get '/booking' do
+'Your request was successfully submitted Bob'
+  end
 
+  post '/booking' do
+    booking = Booking.create(date: params[:booking_date],
+                            details: @details)
+    booking.save
+    redirect to '/booking'
   end
 
   # start the server if ruby file executed directly

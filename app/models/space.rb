@@ -2,7 +2,7 @@ class Space
 
   include DataMapper::Resource
 
-  has 1, :user, through: Resource
+  has n, :users, through: Resource
   #has n, :bookings
   #has n, :users, :through => :bookings
   #has 1, :ownership
