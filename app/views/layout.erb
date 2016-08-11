@@ -2,7 +2,7 @@
 <head>
   <title>MakersBnB</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link type="text/css" rel="stylesheet" href="<%= url('css/main.css') %> />
+  <link type="text/css" rel="stylesheet" href="<%= url('css/main.css') %>" />
 
   <% if flash[:notice] %>
       <div id='notice'>
@@ -23,9 +23,8 @@
    <h4>Welcome <%= current_user.name %>!</h4>
      <form method='post' action='/'>
        <input type='hidden' name='_method' value='delete'>
-       <input type='submit' value='Sign out'>
+       <input type='submit' class="button_styled" value='Sign out'>
      </form>
-     <a type="button" class="button_styled" href="/spaces/new">Add new space</a><br>
   <% end %>
 
   <%= yield %>

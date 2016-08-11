@@ -4,9 +4,40 @@
 .button_styled {
     background-color: #4CAF50;
     border: none;
+    border-radius: 3px;
     color: white;
     padding: 5px 10px;
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul#spaces {
+    list-style-type: none;
+    background-color: #ffffcc;
+    padding: 0;
+    border-radius: 10px;
+}
+
+ul li {
+    padding: 10px 20px;
+}
+
+.space_name {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.space_desc {
+  font-size: 1.16em;
+  font-weight: bold;
+}
+
+ul#spaces li:hover {
+  background-color: #ffff66;
 }

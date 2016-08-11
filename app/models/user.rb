@@ -9,11 +9,9 @@ class User
   attr_reader :password
   attr_accessor :password_confirmation
 
-  has n, :spaces, through: Resource
+  has n, :spaces
   #has n, :bookings
   #has n, :spaces, :through => :bookings
-  #has n, :ownerships
-  #has n, :spaces, :through => :ownerships
 
   property :id, Serial
   property :name, String, required: true

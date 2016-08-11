@@ -33,7 +33,7 @@ class MakersBnB < Sinatra::Base
                         )
     if @user.save
       session[:user_id] = @user.id
-      redirect to '/'
+      redirect to '/spaces'
     else
       flash.now[:errors] = @user.errors.full_messages
       erb :'/users/new'
@@ -67,17 +67,17 @@ class MakersBnB < Sinatra::Base
 
   post '/spaces' do
     price = BigDecimal.new(params[:price])
-    space = Space.create(name:            params[:name],
-                         address:         params[:address],
-                         description:     params[:description],
-                         price:           price,
-                         available_from:  params[:available_from],
-                         available_to:    params[:available_to]
-                         )
-    user = User.get(session[:user_id])
-    user.spaces << space
-    space.save
-    user.save
+    current_user.spaces.create(name:            params[:name],
+                               address:         params[:address],
+                               description:     params[:description],
+                               price:           price,
+                               available_from:  params[:available_from],
+                               available_to:    params[:available_to]
+                               )
+    # user = User.get(session[:user_id])
+    # user.spaces << space
+    # space.save
+    # user.save
     redirect to '/spaces'
   end
 
@@ -88,7 +88,6 @@ class MakersBnB < Sinatra::Base
 
   get '/spaces/:id' do
     @details = Space.get(params[:id])
-    # @owner = @details.user
     erb :'/spaces/details'
   end
 
