@@ -1,5 +1,8 @@
 <html>
 <head>
+  <title>MakersBnB</title>
+  <link type="text/css" rel="stylesheet" href="css/normalize.css" />
+  <link type="text/css" rel="stylesheet" href="css/main.css" />
 
   <% if flash[:notice] %>
       <div id='notice'>
@@ -22,7 +25,7 @@
        <input type='hidden' name='_method' value='delete'>
        <input type='submit' value='Sign out'>
      </form>
-     <a type="button" href="/spaces/new">Add new space</a><br>
+     <a type="button" class="button" href="/spaces/new">Add new space</a><br>
   <% end %>
 
   <%= yield %>
