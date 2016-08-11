@@ -4,7 +4,9 @@ feature 'New Booking Request' do
     Space.create(name: 'The White House',
                  address: '1600 Pennsylvania Avenue',
                  description: 'A BIG WHITE house',
-                 price: '160.50')
+                 price: '160.50',
+                 available_from: '03/07/2017',
+                 available_to: '07/07/2017')
   end
 
   scenario 'A signed in user can request to book a space for a night' do
