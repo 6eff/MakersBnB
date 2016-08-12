@@ -2,6 +2,7 @@
 <head>
   <title>MakersBnB</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Scope+One" rel="stylesheet">
   <link type="text/css" rel="stylesheet" href="<%= url('css/main.css') %>" />
 
 </head>
@@ -20,15 +21,36 @@
   </ul>
   <% end %>
 
-  <div class="col-12">
-    <% if current_user %>
-    <h4>Welcome <%= current_user.name %>!</h4>
-    <form method='post' action='/'>
-      <input type='hidden' name='_method' value='delete'>
-      <input type='submit' class="button_styled" value='Sign out'>
-    </form>
+  <ul class="topnav">
+    <li id="logo">
+      <a href="/">MakersBnB</a>
+    </li>
+    <li class="right">
+      <a>About</a>
+    </li>
+    <% if !current_user %>
+    <li class="right">
+      <a href="/users/signin">Sign In</a>
+    </li>
+    <li class="right">
+      <a href="/users/signup">Sign Up</a>
+    </li>
     <% end %>
-  </div>
+    <% if current_user %>
+    <li class="right">
+      <a href="/spaces">Spaces</a>
+    </li>
+    <li class="right">
+      <form method='post' action='/'>
+        <input type='hidden' name='_method' value='delete'>
+        <input type='submit' class="button_styled" value='Sign out'>
+      </form>
+    </li>
+    <% end %>
+  </ul>
+  <% if current_user %>
+    <h4>Welcome <%= current_user.name %>!</h4>
+  <% end %>
 
   <%= yield %>
 

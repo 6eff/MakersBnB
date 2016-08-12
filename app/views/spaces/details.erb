@@ -3,24 +3,21 @@
     <br />
   </div>
   <div class="col-6">
-    <h1><%= @details.name %></h1>
+    <form action="/booking" action="post" class="form_group">
+      <h1><%= @details.name %></h1>
 
-    <h3>Owner: <%= @details.user.name %></h3>
+      <h3>Owner: <%= @details.user.name %></h3>
 
-    <p><%= @details.description %></p>
+      <p><%= @details.description %></p>
 
-    <h4>£<%= (@details.price.truncate(2).to_s('F') + '00')[/.*\..{2}/] %> per night</h4>
+      <h3>£<%= (@details.price.truncate(2).to_s('F') + '00')[/.*\..{2}/] %> per night</h3>
 
-    <p>
-      Pick a night
-    </p>
+      <h3>Pick a night</h3>
 
-    <form action="/booking" action="post">
       <label for="booking-date">
         Booking Date
-        <br>
-        <input type="date" name="booking-date"/>
       </label>
+      <input type="date" name="booking-date"/>
       <br>
       <button type="submit" class="button_styled" name="request">Request Booking</button>
     </form>

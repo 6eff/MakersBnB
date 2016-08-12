@@ -7,6 +7,42 @@ body {
 
 /*  NAVIGATION   */
 
+#logo {
+  font-size: 3em;
+  font-weight: bold;
+  font-family: 'Scope One', serif;
+}
+
+ul.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    font-family: 'Raleway', sans-serif;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #ccc;}
+
+ul.topnav li a.active {background-color: #4CAF50;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right,
+    ul.topnav li {float: none;}
+}
+
 /*  LISTS   */
 
 a {
@@ -16,46 +52,53 @@ a {
 
 ul#spaces {
     list-style-type: none;
-    background-color: #ffffcc;
     padding: 0;
+    font-family: 'Raleway', sans-serif;
 }
 
-ul li {
-    padding: 10px 20px;
-    border-radius: 10px;
+.space {
+  background-color: #E8E8E8;
+  margin: 20px 0;
+  padding: 30px;
+  border-radius: 10px;
 }
 
 .space_name {
-  font-size: 1.25em;
+  font-size: 1.4em;
   font-weight: bold;
+  color: #505050;
 }
 
 .space_desc {
-  font-size: 1.16em;
-  font-weight: bold;
+  font-size: 1.1em;
 }
 
 ul#spaces li:hover {
-  background-color: #ffff66;
+  background-color: 	#E0E0E0;
 }
 
 /*  FORMS   */
 
-input {
-    width: 100%;
+form.form_group {
+  font-family: 'Raleway', sans-serif;
+  padding: 40px 40px;
+  background-color: #E8E8E8;
+  border-radius: 10px;
 }
 
-input[type=text], input[type=date] {
+input {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+    border-radius: 4px;
 }
 
 textarea {
     width: 100%;
     height: 150px;
     padding: 12px 20px;
+    margin: 8px 0;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -63,13 +106,19 @@ textarea {
     resize: none;
 }
 
+label {
+  font-size: 1.16em;
+  /*font-weight: bold;*/
+}
+
 .button_styled {
   background-color: #4CAF50;
   border: none;
   border-radius: 3px;
   color: white;
-  padding: 5px 10px;
+  padding: 10px;
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
+  font-family: 'Raleway', sans-serif;
 }
