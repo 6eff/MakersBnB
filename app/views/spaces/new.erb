@@ -1,31 +1,41 @@
-<% if current_user %>
-  <form action="/spaces" method="post">
-  	<label for="name">
-  		Name of Space:
-  		<input type="text" name="name"/>
-  	</label>
-  	<label for="address">
-  		Address:
-  		<input type="text" name="address"/>
-  	</label>
-  	<label for="description">
-  		Description:
-  		<textarea name="description" rows="10" cols="30"></textarea>
-  	</label>
-  	<label for="price">
-  		Price:
-  		<input type="text" name="price"/>
-  	</label>
-  	<label for="available_from">
-  		Available from:
-  		<input type="date" name="available_from"/>
-  	</label>
-  	<label for="available_to">
-  		Available to:
-  		<input type="date" name="available_to"/>
-  	</label>
-  	<button type="submit" class="button_styled" >Add Space</button>
-  </form>
-<% else %>
-  <a type="button" class="button_styled" href="/">Please sign up or sign in</a>
-<% end %>
+<div class="grid">
+  <div class="col-3">
+    <br />
+  </div>
+  <div class="col-6">
+    <% if current_user %>
+      <form action="/spaces" method="post">
+      	<label for="name">
+      		Name of Space:
+      		<input type="text" name="name"/>
+      	</label>
+      	<label for="address">
+      		Address:
+      		<input type="text" name="address"/>
+      	</label>
+      	<label for="description">
+      		Description:
+      		<textarea name="description" rows="10" cols="30"></textarea>
+      	</label>
+      	<label for="price">
+      		Price:
+      		<input type="text" name="price"/>
+      	</label>
+      	<label for="available_from">
+      		Available from:
+      		<input type="date" name="available_from"/>
+      	</label>
+      	<label for="available_to">
+      		Available to:
+      		<input type="date" name="available_to"/>
+      	</label>
+      	<button type="submit" class="button_styled" >Add Space</button>
+      </form>
+    <% else %>
+      <a type="button" class="button_styled" href="/">Please sign up or sign in</a>
+    <% end %>
+  </div>
+  <div class="col-3">
+    <br />
+  </div>
+</div>

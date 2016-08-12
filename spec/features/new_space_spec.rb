@@ -7,7 +7,8 @@ feature 'Create New Space' do
 
   scenario 'as signed-in user' do
     sign_up
-    click_link 'Add new space'
+    visit '/spaces'
+    click_button 'Add new space'
     fill_in 'Name of Space:', with: 'The White House'
     fill_in 'Address:', with: '1600 Pennsylvania Avenue'
     fill_in 'Description:', with: 'A BIG WHITE house'
