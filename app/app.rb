@@ -11,7 +11,7 @@ class MakersBnB < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
   use Rack::MethodOverride
-  set :public_folder, Proc.new { File.join(root, 'lib') }
+  set :public_folder, Proc.new { File.join(File.dirname(__FILE__),'lib') }
 
   def current_user
     @current_user ||= User.get(session[:user_id])
@@ -33,7 +33,7 @@ class MakersBnB < Sinatra::Base
                         )
     if @user.save
       session[:user_id] = @user.id
-      redirect to '/'
+      redirect to '/spaces'
     else
       flash.now[:errors] = @user.errors.full_messages
       erb :'/users/new'
@@ -70,7 +70,9 @@ class MakersBnB < Sinatra::Base
     space = Space.create(name:        params[:name],
                           address:     params[:address],
                           description: params[:description],
-                          price:       price
+                          price: price,
+                          available_from: params[:available_from],
+                          available_to: params[:available_to]
                           )
     user = User.get(session[:user_id])
     user.owned_spaces << space

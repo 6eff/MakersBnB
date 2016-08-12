@@ -1,11 +1,21 @@
-<form action="/users/login" method="POST">
-  <label for="email">
-    Email
-    <input type="email" name="email">
-  </label>
-  <label for="password">
-    Password
-    <input type="password" name="password">
-  </label>
-  <input type="submit" class="button_styled" name="sign_in" value="Sign in">
-</form>
+<div class="grid">
+  <div class="col-3">
+    <br />
+  </div>
+  <div class="col-6">
+    <form action="/users/login" method="POST" class="form_group">
+      <label for="email">
+        Email
+      </label>
+      <input type="email" name="email">
+      <label for="password">
+        Password
+      </label>
+      <input type="password" name="password">
+      <input type="submit" class="button_styled" name="sign_in" value="Sign in">
+    </form>
+  </div>
+  <div class="col-3">
+    <br />
+  </div>
+</div>

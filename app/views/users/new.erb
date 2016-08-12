@@ -1,19 +1,29 @@
-<form action="/users/create" method="POST">
-  <label for="name">
-    Name
-    <input type="text" name="name">
-  </label>
-  <label for="email">
-    Email
-    <input type="email" name="email">
-  </label>
-  <label for="password">
-    Password
-    <input type="password" name="password">
-  </label>
-  <label for="password_confirmation">
-    Confirm password
-    <input type="password" name="password_confirmation">
-  </label>
-  <input type="submit" class="button_styled" name="sign_up" value="Sign up">
-</form>
+<div class="grid">
+  <div class="col-3">
+    <br />
+  </div>
+  <div class="col-6">
+    <form action="/users/create" method="POST" class="form_group">
+      <label for="name">
+        Name
+        <input type="text" name="name">
+      </label>
+      <label for="email">
+        Email
+        <input type="email" name="email">
+      </label>
+      <label for="password">
+        Password
+        <input type="password" name="password">
+      </label>
+      <label for="password_confirmation">
+        Confirm password
+        <input type="password" name="password_confirmation">
+      </label>
+      <input type="submit" class="button_styled" name="sign_up" value="Sign up">
+    </form>
+  </div>
+  <div class="col-3">
+    <br />
+  </div>
+</div>

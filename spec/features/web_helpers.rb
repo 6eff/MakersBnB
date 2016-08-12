@@ -23,11 +23,16 @@ end
 def add_space(name: 'The White House',
              address: '1600 Pennsylvania Avenue',
              description: 'A BIG WHITE house',
-             price: '160.50')
+             price: '160.50',
+             available_from: '12/12/2016',
+             available_to: '13/12/2016'
+             )
   visit "/spaces/new"
   fill_in :name, with: name
   fill_in :address, with: address
   fill_in :description, with: description
   fill_in :price, with: price
+  fill_in :available_from, with: available_from
+  fill_in :available_to, with: available_to
   click_button 'Add Space'
 end
