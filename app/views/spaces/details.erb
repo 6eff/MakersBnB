@@ -1,10 +1,10 @@
-<h1><%= @details.name %></h1>
+<h1><%= @space.name %></h1>
 
-<h2><%= @owner.name %></h2>
+<h2><%= @space.owner.name %></h2>
 
-<p><%= @details.description %></p>
+<p><%= @space.description %></p>
 
-<h4>£<%= (@details.price.truncate(2).to_s('F') + '00')[/.*\..{2}/] %> per night</h4>
+<h4>£<%= (@space.price.truncate(2).to_s('F') + '00')[/.*\..{2}/] %> per night</h4>
 
 <p>
   Pick a night
@@ -15,5 +15,6 @@
     Booking Date
   <input type="date" name="booking_date"/>
   </label>
+  <input type="hidden" name="rented_spaces" value="<%= @space.id %>"/>
   <button type="submit" class="button_styled" name="request">Request Booking</button>
 </form>

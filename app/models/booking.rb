@@ -3,10 +3,8 @@ class Booking
 
   property :id, Serial
   property :date, Date
-  # property :end_date, Date
-  property :details, Text
-
-  belongs_to :user
-  belongs_to :space
+  
+  belongs_to :user, key: true
+  belongs_to :space, key: true
 
 end

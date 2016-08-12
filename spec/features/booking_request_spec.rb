@@ -19,7 +19,7 @@ feature 'New Booking Request' do
     expect(page).to have_content 'A BIG WHITE house'
     fill_in 'Booking Date', with: '04/07/2017'
     click_button 'Request Booking'
-    expect(page).to have_content 'Your request was successfully submitted Bob'
+    expect(page).to have_content 'Your request was successfully submitted to Bob'
   end
 
 end

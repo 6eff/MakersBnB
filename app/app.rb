@@ -73,9 +73,9 @@ class MakersBnB < Sinatra::Base
                           price:       price
                           )
     user = User.get(session[:user_id])
-    user.spaces << space
-    space.save
+    user.owned_spaces << space
     user.save
+    space.save
     redirect to '/spaces'
   end
 
@@ -85,18 +85,20 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/spaces/:id' do
-    @details = Space.get(params[:id])
-    @owner = @details.users
+    @space = Space.get(params[:id])
     erb :'/spaces/details'
   end
 
   get '/booking' do
-'Your request was successfully submitted Bob'
+    @signed_user = User.get(session[:user_id])
+    erb :'/booking/confirmation'
   end
 
   post '/booking' do
-    booking = Booking.create(date: params[:booking_date],
-                            details: @details)
+    booking = Booking.create(date: params[:booking_date], space_id: params[:rented_spaces])
+    user = User.get(session[:user_id])
+    user.bookings << booking
+    user.save
     booking.save
     redirect to '/booking'
   end
