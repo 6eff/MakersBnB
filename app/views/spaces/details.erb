@@ -1,28 +1,27 @@
 <div class="grid">
-  <div class="col-3">
-    <br />
-  </div>
-  <div class="col-6">
-    <form action="/booking" action="post" class="form_group">
-      <h1><%= @details.name %></h1>
+	<div class="col-3">
+		<br/>
+	</div>
+	<div class="col-6">
+		<form action="/booking" method="post" class="form_group">
+			<h1><%= @space.name %></h1>
 
-      <h3>Owner: <%= @details.user.name %></h3>
+			<h2><%= @space.owner.name %></h2>
 
-      <p><%= @details.description %></p>
+			<p><%= @space.description %></p>
 
-      <h3>£<%= (@details.price.truncate(2).to_s('F') + '00')[/.*\..{2}/] %> per night</h3>
-
-      <h3>Pick a night</h3>
-
-      <label for="booking-date">
-        Booking Date
-      </label>
-      <input type="date" name="booking-date"/>
-      <br>
-      <button type="submit" class="button_styled" name="request">Request Booking</button>
+			<h4>£<%= (@space.price.truncate(2).to_s('F') + '00')[/.*\..{2}/] %>
+				per night</h4>
+			<h3>Pick a night</h3>
+				<label for="booking_date">
+					Booking Date
+					<input type="date" name="booking_date"/>
+				</label>
+				<input type="hidden" name="rented_spaces" value="<%= @space.id %>"/>
+				<button type="submit" class="button_styled" name="request">Request Booking</button>
     </form>
-  </div>
-  <div class="col-3">
-    <br />
-  </div>
+	</div>
+	<div class="col-3">
+		<br/>
+	</div>
 </div>

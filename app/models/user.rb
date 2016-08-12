@@ -9,9 +9,9 @@ class User
   attr_reader :password
   attr_accessor :password_confirmation
 
-  has n, :spaces
-  #has n, :bookings
-  #has n, :spaces, :through => :bookings
+  has n, :owned_spaces, 'Space', child_key: ['user_id']
+  has n, :bookings
+  has n, :rented_spaces, 'Space', through: :bookings, via: :space
 
   property :id, Serial
   property :name, String, required: true

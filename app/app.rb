@@ -67,17 +67,17 @@ class MakersBnB < Sinatra::Base
 
   post '/spaces' do
     price = BigDecimal.new(params[:price])
-    current_user.spaces.create(name:            params[:name],
-                               address:         params[:address],
-                               description:     params[:description],
-                               price:           price,
-                               available_from:  params[:available_from],
-                               available_to:    params[:available_to]
-                               )
-    # user = User.get(session[:user_id])
-    # user.spaces << space
-    # space.save
-    # user.save
+    space = Space.create(name:        params[:name],
+                          address:     params[:address],
+                          description: params[:description],
+                          price: price,
+                          available_from: params[:available_from],
+                          available_to: params[:available_to]
+                          )
+    user = User.get(session[:user_id])
+    user.owned_spaces << space
+    user.save
+    space.save
     redirect to '/spaces'
   end
 
@@ -87,12 +87,22 @@ class MakersBnB < Sinatra::Base
   end
 
   get '/spaces/:id' do
-    @details = Space.get(params[:id])
+    @space = Space.get(params[:id])
     erb :'/spaces/details'
   end
 
-  post '/booking' do
+  get '/booking' do
+    @signed_user = User.get(session[:user_id])
+    erb :'/booking/confirmation'
+  end
 
+  post '/booking' do
+    booking = Booking.create(date: params[:booking_date], space_id: params[:rented_spaces])
+    user = User.get(session[:user_id])
+    user.bookings << booking
+    user.save
+    booking.save
+    redirect to '/booking'
   end
 
   # start the server if ruby file executed directly

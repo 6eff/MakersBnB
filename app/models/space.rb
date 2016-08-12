@@ -2,10 +2,6 @@ class Space
 
   include DataMapper::Resource
 
-  belongs_to :user
-  #has n, :bookings
-  #has n, :users, :through => :bookings
-
   property :id, Serial
   property :name, String, required: true
   property :address, String, required: true
@@ -13,5 +9,9 @@ class Space
   property :price, Decimal, precision: 15, scale: 4
   property :available_from, Date, required: true
   property :available_to, Date, required: true
+
+  has n, :renters, 'User', through: :bookings, via: :user
+  has n, :bookings
+  belongs_to :owner, 'User', child_key: ['user_id']
 
 end
