@@ -8,6 +8,12 @@
 * Luke Cartledge
 * Victor Vasiliev
 
+#### Setup
+* clone
+* run bundle install
+* run rackup and go to your localhost
+* you'll need a preinstaled Postgres db
+
 ### User Stories
 
 ```
